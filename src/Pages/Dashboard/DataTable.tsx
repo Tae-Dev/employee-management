@@ -1,5 +1,4 @@
-import React from 'react';
-import { Table, Panel } from 'rsuite';
+import { Panel, Table } from 'rsuite';
 
 const { Column, HeaderCell, Cell } = Table;
 

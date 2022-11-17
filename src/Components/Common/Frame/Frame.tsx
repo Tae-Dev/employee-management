@@ -1,8 +1,6 @@
-import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, Content, DOMHelper, Nav, Sidebar, Sidenav } from "rsuite";
-import Brand from "../Brand";
 import Header from "../Header";
 import NavLink from "../NavLink";
 import NavToggle from "./NavToggle";

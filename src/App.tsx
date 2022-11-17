@@ -1,10 +1,6 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { Button } from "rsuite";
-import "rsuite/dist/rsuite.min.css";
 import { BrowserRouter } from "react-router-dom";
-import Layout from "./Layout";
+import "rsuite/dist/rsuite.min.css";
+import "./App.css";
 import { Router } from "./Components/Router";
 import AuthProvider from "./Contexts/AuthContext";
 import EmployeeProvider from "./Contexts/EmployeeContext";

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Modal, Button, ButtonToolbar, Placeholder } from "rsuite";
+import { Modal } from "rsuite";
 
 type Props = {
   handleClose: () => void;

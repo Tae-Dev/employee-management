@@ -1,20 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
-  Dropdown,
-  Popover,
-  Whisper,
-  WhisperInstance,
-  Stack,
-  Badge,
-  Avatar,
-  IconButton,
-  List,
-  Button
+  Avatar, Dropdown,
+  Popover, Stack, Whisper,
+  WhisperInstance
 } from 'rsuite';
-import NoticeIcon from '@rsuite/icons/Notice';
-import HelpOutlineIcon from '@rsuite/icons/HelpOutline';
-import GithubIcon from '@rsuite/icons/legacy/Github';
-import HeartIcon from '@rsuite/icons/legacy/HeartO';
 import { useAuth } from '../../../Contexts/AuthContext';
 
 

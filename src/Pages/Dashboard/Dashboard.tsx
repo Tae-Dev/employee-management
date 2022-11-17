@@ -1,5 +1,4 @@
-import React from 'react';
-import { Row, Col, Panel, ButtonGroup, Button } from 'rsuite';
+import { Col, Panel, Row } from 'rsuite';
 
 const barChartData = [
   {

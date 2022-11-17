@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, ButtonToolbar, Input, Panel, Table } from "rsuite";
 import { useAuth } from "../../Contexts/AuthContext";
 import { useEmployee } from "../../Contexts/EmployeeContext";

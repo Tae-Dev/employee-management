@@ -1,12 +1,8 @@
 import {
-    createContext,
-    FC,
-    useCallback,
-    useContext,
-    useEffect,
-    useState,
-  } from "react";
-  import { NavigateFunction, useNavigate } from "react-router-dom";
+  createContext,
+  FC, useContext, useState
+} from "react";
+import { useNavigate } from "react-router-dom";
 
   export type EmployeeType = {
     firstName: string,
