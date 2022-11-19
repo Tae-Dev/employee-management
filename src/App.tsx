@@ -3,20 +3,23 @@ import "rsuite/dist/rsuite.min.css";
 import "./App.css";
 import { Router } from "./Components/Router";
 import AuthProvider from "./Contexts/AuthContext";
-import EmployeeProvider from "./Contexts/EmployeeContext";
+import EmployeeProvider from "./Contexts/UserContext";
+import LoadingProvider from "./Contexts/LoadingContext";
 import ModalContext from "./Contexts/ModalContext";
 
 function App() {
   return (
     <BrowserRouter>
       {/* <Layout> */}
-      <ModalContext>
-        <AuthProvider>
-          <EmployeeProvider>
-            <Router />
-          </EmployeeProvider>
-        </AuthProvider>
-      </ModalContext>
+      <LoadingProvider>
+        <ModalContext>
+          <AuthProvider>
+            <EmployeeProvider>
+              <Router />
+            </EmployeeProvider>
+          </AuthProvider>
+        </ModalContext>
+      </LoadingProvider>
       {/* </Layout> */}
     </BrowserRouter>
   );

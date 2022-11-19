@@ -5,6 +5,7 @@ import {
   useState
 } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import { useLoading } from "./LoadingContext";
 
 enum Employee {
   userNameUser = "user",
@@ -38,8 +39,10 @@ const AuthContext = createContext<AuthContextType>({
 const AuthProvider: FC<any> = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState<userType | null | undefined>();
+  const { onLoading } = useLoading()
 
   useEffect(() => {
+    onLoading();
     const user = localStorage.getItem("user");
     user && setUser(JSON.parse(user));
     if (!user) {
@@ -58,15 +61,16 @@ const AuthProvider: FC<any> = ({ children }) => {
       (username === Employee.userNameAdmin &&
         password === Employee.passwordAdmin)
     ) {
-      console.log("login success");
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ username: username, password: password, role: username === 'user' ? 'User' : 'Admin' })
-      );
-      setUser({ username: username, password: password, role: username === 'user' ? 'User' : 'Admin' })
-      navigate("/");
+      onLoading(() => {
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ username: username, password: password, role: username === 'user' ? 'User' : 'Admin' })
+        );
+        setUser({ username: username, password: password, role: username === 'user' ? 'User' : 'Admin' })
+        navigate("/")
+      });
+      
     } else {
-      console.log("error");
     }
   };
 

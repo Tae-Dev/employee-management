@@ -13,7 +13,7 @@ const Modals: FC<Props> = ({ handleClose, title, open, children }) => {
     <>
       <Modal open={open} onClose={handleClose}>
         <Modal.Header>
-          <Modal.Title>{title}</Modal.Title>
+          <h4 className="text-black">{title}</h4>
         </Modal.Header>
         <Modal.Body>{children}</Modal.Body>
       </Modal>

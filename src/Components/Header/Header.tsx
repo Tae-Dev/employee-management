@@ -4,23 +4,16 @@ import {
   Popover, Stack, Whisper,
   WhisperInstance
 } from 'rsuite';
-import { useAuth } from '../../../Contexts/AuthContext';
+import { useAuth } from '../../Contexts/AuthContext';
 
 
 const Header = () => {
   const trigger = useRef<WhisperInstance>(null);
   const { onLogout, user } = useAuth()
 
-  useEffect(() => {
-    console.log("user", user);
-    
-  }, [user])
-  
-
   const renderAdminSpeaker = ({ onClose, left, top, className }: any, ref: any) => {
     const handleSelect = (eventKey: any) => {
       onClose();
-      console.log(eventKey);
     };
     return (
       <Popover ref={ref} className={className} style={{ left, top }} full>

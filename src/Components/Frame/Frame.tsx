@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, Content, DOMHelper, Nav, Sidebar, Sidenav } from "rsuite";
-import Header from "../Header";
-import NavLink from "../NavLink";
+import Header from "../Header/Header";
+import NavLink from "../NavLink/NavLink";
 import NavToggle from "./NavToggle";
 
 const { getHeight, on } = DOMHelper;
@@ -66,8 +66,8 @@ const Frame = (props: FrameProps) => {
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
                 alt="logo"
               />
-              <div>Employee</div>
-              <div>management</div>
+              <div className="text-black">User</div>
+              <div className="text-black">management</div>
             </div>
           ) : (
             <h2 className="flex items-center text-lg font-semibold text-gray-900 dark:text-white p-2 pl-3">

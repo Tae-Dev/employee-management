@@ -3,32 +3,32 @@ import { useNavigate } from "react-router-dom";
 import Modals from "../Components/Modal/Modals";
 
 type ModalContextType = {
-  handleOpen: (title: string, children: React.ReactNode ) => void;
-  handleClose: () => void
+  handleOpenModal: (title: string, children: React.ReactNode ) => void;
+  handleCloseModal: () => void
 };
 
 const ModalContext = createContext<ModalContextType>({
-  handleOpen: () => {},
-  handleClose: () => {},
+  handleOpenModal: () => {},
+  handleCloseModal: () => {},
 });
 
 const ModalProvider: FC<any> = ({ children }) => {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState({title: "", open: false, children})
 
-  const handleOpen = (title: string, children: React.ReactNode ) => {
+  const handleOpenModal = (title: string, children: React.ReactNode ) => {
     setOpenModal({title: title,open: true, children: children})
   };
 
-  const handleClose = () => {
+  const handleCloseModal = () => {
     setOpenModal({...openModal, open: false});
   };
 
   return (
-    <ModalContext.Provider value={{ handleOpen, handleClose }}>
+    <ModalContext.Provider value={{ handleOpenModal, handleCloseModal }}>
       {children}
       {openModal.open && <Modals
-        handleClose={handleClose}
+        handleClose={handleCloseModal}
         title={openModal.title}
         open={openModal.open}
         children={openModal.children}
