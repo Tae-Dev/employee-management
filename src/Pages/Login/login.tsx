@@ -10,6 +10,12 @@ const Login = () => {
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  useEffect(() => {
+    if(user){
+      navigate('/')
+    }
+  }, [user])
+
   const handleLogin = () => {
     onLogin(userName, password, navigate);
   };
