@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { Button, ButtonToolbar } from "rsuite";
-import { UserType } from "../../Contexts/UserContext";
 import { useLoading } from "../../Contexts/LoadingContext";
 
 type Props = {

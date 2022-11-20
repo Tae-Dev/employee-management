@@ -10,7 +10,6 @@ import ModalContext from "./Contexts/ModalContext";
 function App() {
   return (
     <BrowserRouter>
-      {/* <Layout> */}
       <LoadingProvider>
         <ModalContext>
           <AuthProvider>
@@ -20,7 +19,6 @@ function App() {
           </AuthProvider>
         </ModalContext>
       </LoadingProvider>
-      {/* </Layout> */}
     </BrowserRouter>
   );
 }

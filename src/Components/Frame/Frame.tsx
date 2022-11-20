@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, Content, DOMHelper, Nav, Sidebar, Sidenav } from "rsuite";
 import Header from "../Header/Header";
-import NavLink from "../NavLink/NavLink";
+import NavLink from "./NavLink";
 import NavToggle from "./NavToggle";
 
 const { getHeight, on } = DOMHelper;
@@ -45,6 +45,7 @@ const Frame = (props: FrameProps) => {
       resizeListenner.off();
     };
   }, []);
+  
 
   const navBodyStyle: React.CSSProperties = expand
     ? { height: windowHeight - 100 }
@@ -53,7 +54,6 @@ const Frame = (props: FrameProps) => {
   return (
     <Container className="fixed w-full">
       <Sidebar
-        // className="bg-gray-900 h-200"
         style={{ display: "flex", flexDirection: "column" }}
         width={expand ? 260 : 56}
         collapsible

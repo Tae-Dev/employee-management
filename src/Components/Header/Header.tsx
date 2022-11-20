@@ -36,7 +36,7 @@ const Header = () => {
         <Avatar
           size="sm"
           circle
-          src="https://avatars.githubusercontent.com/u/1203827"
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
           alt="@simonguo"
           style={{ marginLeft: 8 }}
         />

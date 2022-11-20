@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { Button, ButtonToolbar } from "rsuite";
-import { UserType } from "../../Contexts/UserContext";
+import { FormUserType } from "../../@types";
 import { useLoading } from "../../Contexts/LoadingContext";
 
 type Props = {
   handleClose: () => void;
-  handleAddUser: (formState: UserType) => void;
+  handleAddUser: (formState: FormUserType) => void;
 };
 
 const UserForm: FC<Props> = ({ handleClose, handleAddUser }) => {
