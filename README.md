@@ -1,3 +1,6 @@
+# Employee management project
+react suite + tailwindcss + react context
+
 # Demo
 https://astounding-belekoy-0a3476.netlify.app/
 
