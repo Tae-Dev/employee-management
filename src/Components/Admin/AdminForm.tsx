@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { Button, ButtonToolbar } from "rsuite";
 import { useLoading } from "../../Contexts/LoadingContext";
+import { useModal } from "../../Contexts/ModalContext";
 
 type Props = {
   handleClose: () => void;
@@ -23,11 +24,32 @@ const AdminForm: FC<Props> = ({
   } = useForm();
 
   const { onLoading } = useLoading();
+  const { handleOpenModal, handleCloseModal } = useModal();
+
+  const ConfirmSetUser = (data: any) => {
+    const onConfirm = () => {
+      handleClose();
+      handleSetUser(data.registeredUser);
+      onLoading();
+    };
+
+    return (
+      <ButtonToolbar className="mt-10">
+        <Button appearance="primary" onClick={onConfirm}>
+          Confirm
+        </Button>
+        <Button appearance="default" onClick={handleClose}>
+          Cancel
+        </Button>
+      </ButtonToolbar>
+    );
+  };
 
   const onSubmit = (data: any) => {
-    handleClose();
-    handleSetUser(data.registeredUser);
-    onLoading();
+    handleOpenModal("confirm set registered user", ConfirmSetUser(data));
+    // handleClose();
+    // handleSetUser(data.registeredUser);
+    // onLoading();
   };
 
   return (
@@ -45,11 +67,6 @@ const AdminForm: FC<Props> = ({
             pattern: {
               value: /^(0|[1-9]\d*)(\\d+)?$/,
               message: "This field is integer number only.",
-            },
-            validate: (val: string) => {
-              if (parseInt(val) < userData.length) {
-                return `must be set more than ${userData.length}`;
-              }
             },
           })}
           className="appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"

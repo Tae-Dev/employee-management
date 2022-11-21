@@ -30,6 +30,8 @@ const UserProvider: FC<any> = ({ children }) => {
   };
 
   const handleSetUser = (userCount: number) => {
+    const userDataSort = userData.filter((f, index) => index < userCount);
+    setUserData(userDataSort);
     setTotalUser(userCount);
   };
 

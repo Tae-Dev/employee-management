@@ -45,7 +45,6 @@ const Frame = (props: FrameProps) => {
       resizeListenner.off();
     };
   }, []);
-  
 
   const navBodyStyle: React.CSSProperties = expand
     ? { height: windowHeight - 100 }
@@ -117,7 +116,7 @@ const Frame = (props: FrameProps) => {
 
       <Container>
         <Header />
-        <Content style={{ backgroundColor: "#f7f7fa" }}>
+        <Content style={{ backgroundColor: "#e7e7f0" }}>
           <Outlet />
         </Content>
       </Container>
